@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>決算早見表</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="title">決算情報閲覧ツール（Web）</div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-title">CSV取込</div>
+      <div class="btn-row">
+        <label class="btn file">
+          CSV取込
+          <input id="file_csv" type="file" accept=".csv,text/csv" hidden />
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        一覧
+        <span id="count" class="count">0件</span>
+      </div>
+      <div class="table-wrap">
+        <table id="tbl">
+          <thead>
+            <tr>
+              <th>企業コード</th>
+              <th>企業名</th>
+              <th>決算期</th>
+              <th>開示日</th>
+              <th>スコア</th>
+              <th>検出キーワード</th>
+              <th>差分</th>
+              <th>開く</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
